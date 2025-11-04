@@ -4,6 +4,7 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
     button.addEventListener("click",()=>{
         const value =button.textContent;   //jab btn click ho ga to button k ander wali value variable value k ander store ho gi.
+        // ✅ If display shows "Error", clear it before typing anything new
         if (display.value === "Error") {
             display.value = "";
         }
@@ -35,3 +36,4 @@ buttons.forEach(button => {
     
     });
 });
+
