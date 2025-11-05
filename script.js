@@ -24,6 +24,7 @@ buttons.forEach(button => {
                 expression = expression.replace(/(\d+)\s*([\+\-\*\/])\s*(\d+)%/g,
                     (match, num1, op, num2) => `${num1}${op}(${num1}*${num2}/100)`
                 );
+                  expression = expression.replace(/(\d+(\.\d+)?)%/g, "($1/100)");
                 if (expression.includes("//")) {
                     display.value = "Error";
                     return;
@@ -46,3 +47,4 @@ buttons.forEach(button => {
 
     });
 });
+
